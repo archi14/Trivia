@@ -7,33 +7,33 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<style>
 			#btn{
-				
-				margin-left:620px;
-			}
-			
-			#btn2{
-				margin-left:580px;
+				width:180px;
 			}
 			
 			#buttondiv{
-				
-				margin-top:60px;
+			
+				margin-top:20px;
+				margin-left:30px;
 			}
 			
 			
-			#id{
 			
-				margin-top:40px;
-			}
 			
 			#result
 			{
 				font-size:30px;
-				margin-top:40px;
+				margin-top:5px;
 				color:red;
 			}
 		
+		.well{
 		
+			padding-top:0px;
+			margin-top:30px;
+			visibility:hidden;
+			margin-left:30px;
+			margin-right:30px;
+		}
 		</style>
 		
 		
@@ -42,20 +42,39 @@
 	
 	
 	<body>
-		<h1 align="center">Trivia Quiz</h1>
-		<button align="center" type = "button" class="btn btn-primary" id="btn">GO</button>
-		<div align="center" id="data">
-		
-		
-		
+	<div class="row">
+		<div class="col-lg-5"></div>
+		<div class="col-lg-2">
+			<h1>Trivia Quiz</h1>
+			<button type = "button" class="btn btn-primary" id="btn">GO</button>
 		</div>
+		<div class="col-lg-5"></div>
+	</div>
+	<div id="box" class="well">
+		<div class="row">
+			<div class="col-lg-2"></div>
+			<div class="col-lg-8" align="center" id="data">
 		
+		
+		
+			</div>
+			<div class="col-lg-2"></div>
+		</div>
+	</div>
+		<p align="center" id="timer"></p>
 		<p align ="center" id="result"></p>
-		<div id="buttondiv">
-		
-		<button style="visibility:hidden;" type="button" class ="btn btn-primary" id="btn2">Submit</button>
-		<button style="visibility:hidden;" type="button" class="btn btn-primary" id= "btn1">next</button>
+		<div class="row">
+			<div class="col-lg-5"></div>
+			<div class="col-lg-2">
+				<div id="buttondiv" class="btn-group">
+					<button style="visibility:hidden;" type="button" class ="btn btn-primary" id="btn2">Submit</button>
+					<button style="visibility:hidden;" type="button" class="btn btn-primary" id= "btn1">next</button>
+				</div>
+			</div>
+			<div class="col-lg-5"></div>
 		</div>
+		
+		
 		<script src="try.js"></script>
 	</body>
 	
