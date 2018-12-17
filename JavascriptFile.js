@@ -3,12 +3,17 @@ var div = document.getElementById("data");
 var next = document.getElementById("btn1");
 var sub = document.getElementById("btn2");
 var radiodiv = document.getElementById("radio");
+var box = document.getElementById("box");
+var timer = document.getElementById("timer");
 var category=[]
 var questions=[]
 var options=[]
 var page =0
 var score=0;
 var opt=-1
+var x;
+var countdownTimer; 
+
 for(i=0;i<10;i++)
 {
 	options[i]=[];
@@ -24,7 +29,9 @@ btn.addEventListener('click',function(){
 	changetoHtml(ourdata);
 	next.style.visibility='visible';
 	sub.style.visibility='visible';
+	box.style.visibility='visible';
 	displayhtml();
+	
 };
 request.send();
 //console.log(ourdata.results.length);
@@ -48,15 +55,20 @@ sub.addEventListener('click',function(){
 		document.getElementById('result').style.color='red';
 	}
 	
-	
+	sub.disabled= true;
+	timer.style.visibility='hidden';
 	
 });
 
 next.addEventListener('click',function(){
 	
+	document.getElementById('result').style.visibility='hidden';
+	sub.disabled= false;
+	clearInterval(x);
+	timer.innerHTML=" ";
 	page+=1;
 	displayhtml();
-	document.getElementById("result").style.visibility='hidden';
+	timer.style.visibility='visible';
 	
 });
 
@@ -94,7 +106,8 @@ function displayhtml()
 	}
 	//radiodiv.innerHTML=optionsString;	
 	div.innerHTML=questionString;
-	
+	countdownTimer = 30;
+	x= setInterval(timerfunction,1000);
 }	
 
 function generateRandom(check){
@@ -110,3 +123,26 @@ function generateRandom(check){
 	//console.log("from function"+ check);
 	return j;
 }
+
+function timerfunction()
+{
+	
+	timer.style.fontSize= '30px';
+	timer.style.color= 'red';
+		
+		countdownTimer-=1;
+		
+		timer.innerHTML= countdownTimer + " s Remaining";
+		
+		if(countdownTimer <0)
+		{
+			clearInterval(x);
+			timer.innerHTML="Timer Expired";
+			timer.style.fontSize= '40px';
+			sub.disabled="true";
+		}
+			
+		
+		
+	}
+
