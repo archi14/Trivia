@@ -1,2 +1,2 @@
 # Trivia
-Uses an api of quiz data. A simple trivia quiz game that provides of a quiz from various platforms and scores you. Uses html, javascript, bootstrap and css. It keeps score as well and has a timer for each question.
+Uses Html, Css, Bootstrap and Javascript. A trivia game that uses an api of questions and each question has a timer and a score is also kept for the user.
